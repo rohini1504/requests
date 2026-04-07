@@ -2,7 +2,10 @@ import sys
 import os
 import time
 import json
-sys.path.append(os.getcwd())
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, BASE_DIR)
+sys.path.insert(0, os.path.join(BASE_DIR, "agents"))
 
 from github_client import (
     get_pr, post_agent_box, post_comment, read_all_outputs, _agent_marker
